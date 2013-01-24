@@ -50,14 +50,17 @@ iD.ui.RadialMenu = function(entity, history) {
                 }
             ];
         } else if (geometry === 'area') {
-            operations = [
-                {
+            operations = [{
                     id: 'delete',
                     text: 'Delete',
                     description: 'deleted an area',
                     action: iD.actions.DeleteWay(entity.id)
-                }
-            ];
+            }, {
+                    id: 'orthogonalize',
+                    text: 'Orthogonalize',
+                    description: 'orthogonalized an area',
+                    action: iD.actions.Orthogonalize(entity.id)
+            }];
         }
 
         var arc = d3.svg.arc()
